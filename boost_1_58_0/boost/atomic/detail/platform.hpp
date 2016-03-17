@@ -59,7 +59,7 @@
 
 #define BOOST_ATOMIC_DETAIL_PLATFORM gcc_arm
 
-#elif defined(__GNUC__) && defined(__sparc_v9__)
+#elif defined(__GNUC__) && defined(__sparc_v9__) && !defined(__FCC_VERSION)
 
 #define BOOST_ATOMIC_DETAIL_PLATFORM gcc_sparc
 
