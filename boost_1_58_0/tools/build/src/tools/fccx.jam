@@ -47,12 +47,12 @@ flags fccx.compile INCLUDES <include> ;
 
 actions compile.c
 {
-    "$(CONFIG_C_COMMAND)" -w -mt $(OPTIONS) -D$(DEFINES) -I"$(INCLUDES)" -c -o "$(<)" "$(>)"
+    "$(CONFIG_C_COMMAND)" -w -Xg -mt -Kfast,ocl,ilfunc -Nnoline --alternative_tokens $(OPTIONS) -D$(DEFINES) -I"$(INCLUDES)" -c -o "$(<)" "$(>)"
 }
 
 actions compile.c++
 {
-    "$(CONFIG_COMMAND)" -w -Xg -mt $(OPTIONS) -D$(DEFINES) -I"$(INCLUDES)" -c -o "$(<)" "$(>)"
+    "$(CONFIG_COMMAND)" -w -Xg -mt -Kfast,ocl,ilfunc -Nnoline --alternative_tokens $(OPTIONS) -D$(DEFINES) -I"$(INCLUDES)" -c -o "$(<)" "$(>)"
 }
 
 rule link ( targets * : sources * : properties * )
